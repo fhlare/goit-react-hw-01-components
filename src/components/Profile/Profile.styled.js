@@ -4,7 +4,7 @@ export const ProfileCard = styled.div`
   border-radius: 10px;
   background-color: white;
   border: 4px solid;
-  width: 600px;
+  width: 400px;
   height: auto;
   padding: 10px 20px;
 `;
@@ -36,15 +36,20 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
 `;
 
 export const Item = styled.li`
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border: 4px solid;
+  border-radius: 15px;
   display: flex;
+  row-gap: 15px;
+  flex-wrap: wrap;
+  align-content: center;
   flex-direction: column;
   justify-content: center;
   background-color: gray;
+  cursor: pointer;
 `;

@@ -1,12 +1,14 @@
-export const StatisticList = ({title, data }) => {
+import { Item, StartList } from "./Statistic.styled";
+
+export const StatisticList = ({ data }) => {
   return (
-    <ul>
+    <StartList>
       {data.map(elem => (
-        <li key={elem.id}>
+        <Item key={elem.id}>
           <span>{elem.label}</span>
           <span>{elem.percentage}%</span>
-        </li>
+        </Item>
       ))}
-    </ul>
+    </StartList>
   );
 };
