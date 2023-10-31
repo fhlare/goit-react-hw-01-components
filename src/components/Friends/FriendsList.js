@@ -1,10 +1,18 @@
-import { FriendListItem } from "./FriendListItem";
-import { ListContainer } from "./FriendsList.stiled";
+import { FriendListItem } from './FriendListItem';
+import { ListContainer, FriendsList, Item } from './FriendsList.stiled';
 
 export const FriendList = ({ friends }) => {
   return (
     <ListContainer>
-      <FriendListItem friends={friends} />
+      <FriendsList>
+        {friends.map(friend => {
+          return (
+            <Item key={friend.id}>
+              <FriendListItem friend={friend} />
+            </Item>
+          );
+        })}
+      </FriendsList>
     </ListContainer>
   );
 };

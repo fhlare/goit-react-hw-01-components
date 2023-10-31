@@ -1,17 +1,12 @@
-import { Item, FriendsList, Text, IsOnline } from "./FriendsList.stiled";
+import { Fragment } from 'react';
+import {Text, IsOnline } from './FriendsList.stiled';
 
-export const FriendListItem = ({ friends}) => {
+export const FriendListItem = ({ friend: {isOnline, avatar, name } }) => {
   return (
-        <FriendsList>
-      {friends.map(friend => {
-        return (
-          <Item key={friend.id}>
-            <IsOnline $online={friend.isOnline}></IsOnline>
-            <img src={friend.avatar} alt={friend.name} width="48" />
-            <Text>{friend.name}</Text>
-          </Item>
-        );
-      })}
-    </FriendsList>
+    <Fragment>
+        <IsOnline $online={isOnline}></IsOnline>
+        <img src={avatar} alt={name} width="48" />
+        <Text>{name}</Text>
+     </Fragment>
   );
-}
+};
